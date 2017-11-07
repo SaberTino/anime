@@ -1,0 +1,164 @@
+
+/*头部设置*/
+#header-top{
+	padding-top:30px;
+}
+/*logo设置*/
+#logo img{
+	float:left;
+	margin-left:10px;
+	margin-bottom:-80px;
+}
+/*搜索框设置*/
+#top-input{
+	/*文本框左浮动，左外边距*/
+	float:left;
+	margin-left:300px;
+	margin-top:5px;
+}
+#top-input div.input-box{
+	float:left;
+	/*宽度，高度，box-sizing,边框*/
+	width:300px;
+	height:34px;
+	box-sizing:border-box;
+	border:1px solid #0AA1ED;
+}
+#top-input>a{
+	float:left;
+	width:37px;
+	height:34px;
+}
+#txtSearch{
+	/*边框 0，轮廓0，宽度，高度，box-sizing，背景色*/
+	border:0;
+	outline:0;
+	width:320px;
+	height:32px;
+	box-sizing:border-box;
+	background:transparent;
+	/*左内边距*/
+	padding-left:10px;
+}
+/*登入注册设置*/
+#list{
+	float:right;
+	margin-top:13px;
+}
+#list li{
+	float:left;
+	height:20px;
+	font-size:15px;
+	line-height:20px;
+	padding-left:5px;
+}
+/*导航设置*/
+#nav{
+	margin-top:55px;
+	position:relative;
+}
+.index{
+	font-size:20px;
+	background:#07A7E1;
+	padding:10px;
+}
+/*导航标签定位*/
+#move{
+margin:0px 200px;
+}
+#move2{
+margin:0px 300px;
+}
+.new{
+	position:absolute;
+	font-size:20px;
+	top:10px;
+	left:425px;	
+}
+
+/*楼层滚动*/
+/*此文件设置楼层滚动及侧边栏样式*/
+
+#sample,#venue,#outdoor,#guest{
+	top:100px;
+	opacity:0;
+	transition:all 2s ease;	
+}
+
+#sample.louCengShow,#venue.louCengShow,#outdoor.louCengShow,#guest.louCengShow{	
+	position:relative;
+	top:0;
+	opacity:1;
+}
+
+/******************楼层右侧侧边栏*************************/
+#right-nav{
+    position:fixed;
+	transform:translatez(0);
+    top:270px;
+    left:100px;
+    display:flex;
+    flex-direction:column;
+}
+
+#right-nav>a{
+    padding:8px;
+    background:#808080;
+    text-decoration:none;
+    color:#fff;
+    border-radius:5px 0 0 5px;
+    font-size:12px;
+	font-weight:bold;
+    margin:5px 0;
+}
+
+#right-nav>a.light{
+	background:#eb6100;
+}
+
+/*下拉列表*/
+.dropdown{
+	width:64px; 
+	height:20px;
+	margin:0px 100px;
+	font-size:20px;
+	position:absolute;
+	top:5px;
+	left:0px;
+}
+    .dropdown a{
+			
+			text-decoration:none; 
+			color:#ffe2ac;
+			display:inline-block;
+			z-index:20px;
+			
+		}
+		.dropdown>.dropdown-btn{ 
+
+			border:0px solid #000; 
+			padding:6px 12px;
+			display:inline-block;
+			text-decoration:none; 
+			color:#ddd;			
+		}
+		.dropdown>.dropdown-menu{
+			width:150px;
+			list-style:none; margin:0; padding:0;
+			border:1px solid #aaa;
+			background:#07A7E1;
+			box-shadow:5px 5px 100px #fff;
+			height:0; opacity:0;
+			font-size:10px;
+			overflow:hidden;
+			transition:all .3s linear;
+		}
+		.dropdown-menu a{padding:6px 20px; height: 18px;font-size:15px;margin-left:10px;}
+		.dropdown-menu>.dropdown-item:hover{
+			font-size:15px;
+		}
+		.dropdown-menu.in{
+			height:152px; opacity:1;
+			position:absolute;
+			z-index:100;
+		}

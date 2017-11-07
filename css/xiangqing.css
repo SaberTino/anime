@@ -1,0 +1,109 @@
+ body{
+			 text-align:center;
+			 margin:0 auto;
+			 width:960px
+			 }
+			
+			.tagbox a:hover {
+				background-color: rgb(255, 102, 136);
+			}
+			.anime_list h2 a:hover {
+				background-color: rgb(40, 185, 248);
+			}
+
+			div.index>a{
+			margin-right:880px;	
+		}
+
+
+			 li.tag-list {
+			 line-height: 30px;
+			 margin:3px 0px;
+			 float:left;
+			 
+		}
+		.tagbox li.tag-list  a {
+			 padding: 0px 6px;
+			 margin-right: 8px;
+			 display: inline-block;
+			 color: rgb(119, 119, 119);
+			}
+
+	.anime_list li {
+		 display:flex;justify-content:space-between;flex-wrap:wrap;
+		 padding: 20px 10px;
+		 margin: 10px 0px;
+		 box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.37);
+		 width: 97%;
+		 height:320px
+	}
+	.anime_list div.left-area{
+		 width: 200px;
+		 height: 300px;
+	}
+	div.left-area img{
+		 width: 210px;
+		 height: 315px;
+		 margin-left: 15px;
+	}
+	.anime_list div.right-area{
+		 width: 450px;
+		 height: 300px;
+		 overflow: hidden;
+		 margin:10px 120px 0px 0px;
+		 line-height: 23px;
+	}
+	.anime_list p{
+		 line-height: 1.6rem;
+		 margin: 2px 0px 0px;
+		 color: rgb(119, 119, 119);
+	}
+	.anime_list h2 a {
+		 color: rgb(102, 102, 102);
+		 font-size:20px;
+		 font-weight:  bold;
+	}
+	.d_label{
+		text-align:left;
+		font-size:15px;
+		margin-left: 45px;
+	}	
+	/*分页*/
+	.pager-bg { padding:15px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+	.k_pape { overflow: hidden; text-align: center; font-size: 12px; }
+	.k_pape span.count {
+    float: right;
+    height: 23px;
+    line-height: 23px;
+    margin-right: 2px;
+    padding: 5px 4px 0px;
+    color: rgb(51, 51, 51);
+	}
+	.k_pape a:link, .k_pape a:visited {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(221, 221, 221);
+    color: rgb(85, 85, 85);
+    display: inline;
+    float: left;
+    height: 26px;
+    line-height: 26px;
+    margin-right: 1px;
+    padding: 0px 10px;
+    margin-left: 3px;
+    text-decoration: none;
+    margin-top: 2px;
+	}
+
+	.k_pape a.pagenow {
+    background-color: rgb(7, 167, 225);
+    border: 1px solid rgb(7, 167, 225);
+    color: rgb(255, 255, 255);
+    float: left;
+    font-weight: bold;
+    height: 26px;
+    line-height: 26px;
+    margin: 2px;
+    padding: 0px 10px;
+    text-align: center;
+    font-style: normal;
+	}

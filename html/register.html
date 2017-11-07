@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册页面</title>
+	<link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+	<script src="../js/common.js"></script>
+	<div  id ="content" >	
+		<h1 class="title">创建账户</h1>
+		<p class="avatar"> 
+			<img  src="../images/login.png" alt="">
+		</p>
+		<form  method="post" id="uform">
+			<p class="word">
+				用户名称:
+				<input type="text" name="uname"  onblur="checkUname()" id="uname" placeholder="请输入用户名">
+				<span id="uname-show"></span>
+			</p>
+			
+			<p class="word">
+				用户密码:
+				<input type="password" name="upwd" id="upwd" placeholder="请输入密码">
+			</p>
+			<p class="word">
+				确认密码:
+				<input type="password"  id="cpwd" onblur="checkPwd()" placeholder="请输入密码">
+				<span id="cpwd-show"></span>
+			</p>
+			
+			<p class="word">
+				用户邮箱:
+				<input type="email" name="email" placeholder="请输入用户邮箱" id="email">
+			</p>
+			<p class="word">
+				用户手机:
+				<input type="text" name="phone" placeholder="请输入用户手机" id="phone">
+			</p>
+			
+			<p class="word">
+				用户昵称:
+				<input type="text" name="user_name" placeholder="请输入用户昵称"
+				id="user_name">
+			</p>
+			<p class="word">
+				用户性别:
+				<select name="gender" id="gender">
+					<option value="0">男</option>
+					<option value="1">女</option>
+				</select>
+			</p>
+			<p class="submit">
+				<input type="button" value="注册" onclick="gologin()">
+			</p>
+		</form>
+		
+		<p class="login">
+			<a href="login.html" text-decoration="none">登入账户</a>
+		</p>
+	</div>
+	<script>
+				/*
+				*1.验证用户密码 和 确认密码是否一致并给出提示
+				**/
+				function checkPwd(){
+				//1.抓取用户密码和确认密码的值，
+				var upwd=$("upwd").value;
+				var cpwd=$("cpwd").value;
+				//2.判定两个变量的值是否一致，并将提示信息
+				if (upwd===cpwd){
+					$("cpwd-show").innerHTML="通过";
+				}else{
+					$("cpwd-show").innerHTML="密码不一致,请重新输入";				
+				}
+			
+			}
+		/**
+			*验证指定用户名称是否存在
+			*/
+			function checkUname(){
+				//1.获取 uname 的值
+				var uname=$("uname").value;
+				//2.验证 uname 是否为空
+				if(uname==""){
+					$("uname-show").innerHTML="账名不能为空";
+				}else{
+				/*
+				*ajax异步请求验证用户名称是否存在
+				*获取xhr对象
+				*创建请求
+				*设置回调函数
+				*提交数据
+				**/
+					var xhr = getXhr();
+				//2、创建请求
+				var url="../data/php/checkuname.php?uname="+uname;
+				xhr.open("get",url,true);
+				//3、设置回调函数
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200){
+						//获取响应数据
+						var resText = xhr.responseText;
+						//将响应数据显示在 uname-show
+						$("uname-show").innerHTML=resText;
+					}
+				}
+					xhr.send(null);
+				}
+			}
+			function gologin(){
+				var xhr=getXhr();
+				xhr.open("post","../data/php/register.php",false);
+				xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200){
+						var resText = xhr.responseText;
+						if(resText==1){
+							alert("注册成功");
+							window.location="login.html";
+						}else{
+							alert("请按要求填写");
+						}
+
+					}	
+				}
+				var uname=$("uname").value;
+				var upwd=$("upwd").value;
+				var email=$("email").value;
+				var phone=$("phone").value;
+				var user_name=$("user_name").value;
+				var gender=$("gender").value;
+				var url=`uname=${uname}&upwd=${upwd}&email=${email}&phone=${phone}&user_name=${user_name}&gender=${gender}`;
+				xhr.send(url);
+			}
+
+		</script>
+		
+</body>
+</html>
+
+
+

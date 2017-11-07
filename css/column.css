@@ -1,0 +1,65 @@
+#container,#container2,#container3{
+	width:960px;
+	margin:0 auto;
+}
+
+
+/*栏目布局*/
+#container,#container2,#container3{
+/*1、变为弹性布局容器*/
+	display:flex;
+/*2、允许项目们换行*/
+	flex-wrap:wrap;
+/*3、让项目们两端对齐*/
+	justify-content:space-between;
+}
+#container li.product{
+	width:230px;
+	height:300px;
+	margin:0px 5px;
+}
+#container li{
+	background-color:#e8e8e8;
+	float:left;
+	margin-bottom:0px;
+}
+#container img{
+	opacity:0;
+}
+#container img:hover{
+	opacity:1;
+}
+
+#container2 li.product{
+	width:230px;
+	height:300px;
+	margin:0px 5px;
+}
+#container2 li{
+	background-color:#e8e8e8;
+	float:left;
+	margin-bottom:0px;
+}
+#container2 img{
+	opacity:0;
+}
+#container2 img:hover{
+	opacity:1;
+}
+/*使用列表布局*/
+#container3 li.product{
+	width:230px;
+	height:300px;
+	margin:0px 5px;
+}
+#container3 li{
+	background-color:#e8e8e8;
+	float:left;
+	margin-bottom:0px;
+}
+#container3 img{
+	opacity:0;
+}
+#container3 img:hover{
+	opacity:1;
+}

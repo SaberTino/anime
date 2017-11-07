@@ -1,0 +1,84 @@
+
+body{
+	background-image:url(../images/background.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-attachment:fixed;
+}
+/*搭建框架*/
+#content{
+	width: 25%;
+    margin: 80px auto 0;
+    text-align: center;
+	border-radius:10%;
+    border: 0px solid  #dedede;	
+	/*阴影设置*/
+	box-shadow:0px 0px 40px 10px #F1C19D;
+}
+/*设置头像*/
+#content p.avatar{
+	width:85px;
+	height:85px;
+	background:transparent;
+	border-radius:50%;
+	margin:0 auto;
+/*	box-shadow:0px 0px 80px 25px #fff*/
+}
+/*设置标题*/
+h1.title{
+	font-weight:800;
+	color:#FFF;
+}
+/*设置文本框*/
+#uname,#upwd{
+	border:1px solid #E2DEDD;
+	width:200px;
+	height:30px;
+	outline:none;
+	background-image:url(../images/yhm.png);
+	background-repeat:no-repeat;
+	/*设置图标的起始位置*/
+	background-position:95% center;
+	/*右内边距设置图标*/
+	padding:0 45px 0 10px;
+	box-sizing:border-box;
+	
+}
+/*用户名密码字体*/
+p.word{
+	font-weight:900;
+	color:#FFF;
+}
+#uname{
+	background-image:url(../images/yhm.png);
+}
+#upwd{
+	background-image:url(../images/mm.png);
+}
+p.register a{
+	color:#fff;
+	text-decoration:none;
+}
+/*动画显示效果*/
+body div:nth-child(1){
+	animation:change ;
+	animation-duration:1.5s;
+	animation-timing-function:linear;
+	animation-iteration-count:1;
+}
+@keyframes change{
+			0%{
+				opacity:0.00;
+			
+			}
+			50%{
+				opacity:0.50;
+			}
+			
+			100%{
+				opacity:1;
+				
+			}
+
+		}
+
